@@ -4,29 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Point and Click</title>
-    <link rel="stylesheet" href="css/style2.css">
+    <title>ClickClakCloek</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1 id="mainTitle">ClickClackCloek</h1>
+    <h1 id="mainTitle"></h1>
     <div id="gameWindow">
-        <!-- Foreground -->
 
-        <!-- Charater -->
+        <!--dialogue bar-->
+        <div id="dialogueBar" class="foreground">
+            <div id="setMainDialog">
+                <img id="hero" class="foreground" src="img/potrait.png" alt="portrait">
+                <div id="mainCharacterSpeech" class="foreground speech-bubble">...</div>
+
+                <div id="counterSpeech" class="foreground speech-bubble">...</div>
+                <img id="counterCharacter" class="foreground" src="img/portairStatue.png" alt="The other person">
+                <div id="brownBar"></div>
+            </div>
+        </div>
+
+        <!--Inventory-->
+        <div id="inventoryBox" class="foreground">
+            <p>Your Inventory</p>
+            <ul id="inventoryList">
+
+            </ul>
+        </div>
+
+        <!--Foreground-->
+        <div id="door1" class="foreground"></div>
+        <div id="door2" class="foreground"></div>
+        <div id="statue" class="foreground"></div>
+
+        <!-- Character -->
         <div id="mainCharacter" class="character">
-            <img src="img/MainCharacter_32x32_idle.gif" alt="Main Character">
+            <img src="img/MainCharacter_32x32_idle.gif" alt="main character">
         </div>
         <!-- Background -->
-        <div id="titlemap" class="background">
-            <img src="img/GameBackground.png" alt="tilemap">
+        <div id="tilemap" class="background">
+            <img id="tilemapIMG" src="img/GameBackground.png" alt="tilemap 1">
         </div>
     </div>
 
-        <audio>
-                <source srs="SussyBaka.ogg" type="audio">
-        </audio>
+    <!--Audio of main character and counter character-->
+    <audio id="characterAudio">
+        <source src="audio/Gibberish - Sound Effect_01.mp3" type="audio/mpeg">
+    </audio>
 
-    <script src="js/index2.js"></script>
+    <audio id="counterAudio">
+        <source src="audio/high pitch voice.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/index.js"></script>
 </body>
 </head>
 </html>
