@@ -76,13 +76,6 @@ p {
     height: 56px;
 }
 
-#door2 {
-    top: 394px;
-    left: 651px;
-    width: 61px;
-    height: 48px;
-}
-
 #statue {
     top: 271px;
     left: 339px;
@@ -91,10 +84,11 @@ p {
 }
 
 #signToLeft {
-    top: 351px;
-    left: 450px;
-    width: 32px;
-    height: 32px;
+    top: 401px;
+    left: 339px;
+    width: 33px;
+    height: 82px;
+    background-color: brown;
 }
 
 #rubyContainer {
@@ -104,11 +98,11 @@ p {
     transition: all 1s ease-in-out;
 }
 
-#stone {
-    top: 32px;
-    left: 223px;
+#crate {
+    top: 382px;
+    left: 633px;
     width: 32px;
-    height: 64px;
+    height: 54px;
 }
 
 #platform {

@@ -38,7 +38,7 @@ switch (e.target.id) {
         if (checkItem("rusty key")) {
             showMessage(mainCharacterSpeech, characterAudio, "Wow this keys fits! Lets go inside!..");
             setTimeout(showMessage, 4 * sec, mainCharacterSpeech, characterAudio, "OMG! There is a ruby here.");
-
+            removeItem("rusty key", "rustyKey")
             setTimeout(getItem, 4 * sec, "ruby", "ruby");
         } else {
             showMessage(mainCharacterSpeech, characterAudio, "The door is closed,<br> I need a key to open it...");
@@ -49,36 +49,38 @@ switch (e.target.id) {
         //something insert here
         showMessage(mainCharacterSpeech, characterAudio, "Okay that house on the left<br>that's the house of the town wizard.");
         break;
-    case "stone":
-        if (!checkItem("ruby")) {
-            showMessage(mainCharacterSpeech, characterAudio, "Some sort of pilar.. And there are runes embeded.");
-        } else {
-            showMessage(mainCharacterSpeech, characterAudio, "Wow. I feel light headed..");
-        }
-        break;
     case "statue":
-        counterPortrait.style.opacity = 1;
-        showMessage(mainCharacterSpeech, characterAudio, "Wow, lok at this statue!");
-        setTimeout(showMessage, 4 * sec, counterSpeech, counterAudio, "Oh hello! Finaly someone to talk to :)");
-        setTimeout(showMessage, 8 * sec, mainCharacterSpeech, characterAudio, "What do you mean? Statues are not supose to talk anyway..");
-        setTimeout(showMessage, 12 * sec, counterSpeech, counterAudio, "You should go down to the bunker");
-        setTimeout(function () { counterPortrait.style.opacity = 0; }, 16 * sec);
-        setTimeout(showMessage, 16 * sec, mainCharacterSpeech, characterAudio, "Wait! Why?");
-        setTimeout(showMessage, 16 * sec, mainCharacterSpeech, characterAudio, "That's wierd, but maybe I sould go to the bunker?");
+        if (!checkItem("ruby")) {
+            counterPortrait.style.opacity = 1;
+            showMessage(mainCharacterSpeech, characterAudio, "Wow, lok at this statue!");
+            setTimeout(showMessage, 4 * sec, counterSpeech, counterAudio, "Oh hello! Finaly someone to talk to :)");
+            setTimeout(showMessage, 8 * sec, mainCharacterSpeech, characterAudio, "Whaat? A statue that talks?.");
+            setTimeout(showMessage, 12 * sec, counterSpeech, counterAudio, "Yes, I'm the magic statue. Could you find the ruby for me?");
+            setTimeout(function () { counterPortrait.style.opacity = 0; }, 16 * sec);
+            setTimeout(showMessage, 16 * sec, mainCharacterSpeech, characterAudio, "Yea Sure I'll do my best.");
+            setTimeout(showMessage, 20 * sec, mainCharacterSpeech, characterAudio, "That was wierd, I need something to open that door!");
+        } else {
+            counterPortrait.style.opacity = 1;
+            showMessage(mainCharacterSpeech, characterAudio, "Here, I found you're Ruby!");
+            removeItem("ruby", "ruby")
+            setTimeout(showMessage, 4 * sec, counterSpeech, counterAudio, "Wow you realy did it! Thank you!");
+            setTimeout(showMessage, 8 * sec, mainCharacterSpeech, characterAudio, "What now?");
+            setTimeout(function () { counterPortrait.style.opacity = 0; }, 12 * sec);
+            setTimeout(showMessage, 12 * sec, counterSpeech, counterAudio, "nothing... You're done dumbass.");
+        }
         break;
     case "crate":
         if (!checkItem("rusty key")) {
             getItem("rusty key", "rustyKey");
-            showMessage(mainCharacterSpeech, characterAudio, "Wow I found a rusty key!<br>Must been lying here for ages..");
+            showMessage(mainCharacterSpeech, characterAudio, "Yay I found a key!<br>Maybe I could use this for the door?");
             setTimeout(hideMessage, 4 * sec, mainCharacterSpeech, characterAudio);
         } else {
-            showMessage(mainCharacterSpeech, characterAudio, "Nope nothing here...");
+            showMessage(mainCharacterSpeech, characterAudio, "I already have the key, maybe it could fit in the door?");
             setTimeout(hideMessage, 4 * sec, mainCharacterSpeech, characterAudio);
         }
 
         break;
     default:
-        // do something when it doesn't have a case
         hideMessage(mainCharacterSpeech, characterAudio);
         hideMessage(counterSpeech, counterAudio);
         break;
@@ -114,25 +116,18 @@ function checkItem(item) {
 }
 
 function showItem(itemName, itemId) {
-    //Make a list item from scratch and store it in a variable
     let listItem = document.createElement("li");
 
-    //Give List Item an ID name
     listItem.id = itemId;
 
-    //fill that list item with value of inputfield
     listItem.appendChild(document.createTextNode(itemName));
 
-    //find UL with id todoContainer and attach the list item to it.
     inventoryList.appendChild(listItem);
 }
 
 function removeItem(itemName, itemId) {
-    //remove item in Array
     inventory = inventory.filter(function (newInventory) {
         return newInventory !== itemName;
     });
-    //removes list element in HTML
     document.getElementById(itemId).remove();
-
 }
