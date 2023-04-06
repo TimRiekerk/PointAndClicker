@@ -72,7 +72,7 @@ switch (e.target.id) {
     case "crate":
         if (!checkItem("rusty key")) {
             getItem("rusty key", "rustyKey");
-            showMessage(mainCharacterSpeech, characterAudio, "Yay I found a key!<br>Maybe I could use this for the door?");
+            showMessage(mainCharacterSpeech, characterAudio, "Yay, I found a key!<br>Maybe I could use this for the door?");
             setTimeout(hideMessage, 4 * sec, mainCharacterSpeech, characterAudio);
         } else {
             showMessage(mainCharacterSpeech, characterAudio, "I already have the key, maybe it could fit in the door?");
