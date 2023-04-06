@@ -20,6 +20,23 @@ p {
     margin: 0px;
 }
 
+#inventoryBox{
+    background-color: #442c1c;
+    height: 120px;
+    width: 220px;
+    color: white;
+    padding: 10px;
+    margin: 6px;
+    border: 2px solid gold;
+    
+}
+
+
+#dialogueBar{
+    top: 420px;
+
+}
+
 #title {
     grid-column-start: 2;
     grid-row-start: 1;
@@ -53,37 +70,24 @@ p {
 }
 
 #door1 {
-    top: 287px;
-    left: 177px;
+    top: 143px;
+    left: 472px;
     width: 32px;
-    height: 64px;
-
+    height: 56px;
 }
 
 #door2 {
-    top: 64px;
-    left: 496px;
-    width: 32px;
-    height: 64px;
+    top: 394px;
+    left: 651px;
+    width: 61px;
+    height: 48px;
 }
 
 #statue {
-    top: 287px;
-    left: 703px;
-    width: 32px;
-    height: 64px;
-}
-
-#grave {
-    top: 482px;
-    left: 257px;
-    width: 32px;
-    height: 64px;
-}
-
-#tree1 {
-    top: 400px;
-    left: 667px;
+    top: 271px;
+    left: 339px;
+    width: 33px;
+    height: 82px;
 }
 
 #signToLeft {
@@ -123,11 +127,12 @@ p {
 }
 
 #brownBar {
+    background-color: #442c1c;
     position: absolute;
     height: 32px;
-    width: 800px;
-    background-color: #442c1c;
-    bottom: 0px;
+    width: 912px;
+    bottom: 0;
+    left: 0;
 }
 
 #hero {

@@ -36,22 +36,14 @@ switch (e.target.id) {
     case "door1":
         //something insert here
         if (checkItem("rusty key")) {
-            showMessage(mainCharacterSpeech, characterAudio, "This key fits and it's open now..");
-            setTimeout(showMessage, 4 * sec, mainCharacterSpeech, characterAudio, "Wait what?! There a ruby here.");
+            showMessage(mainCharacterSpeech, characterAudio, "Wow this keys fits! Lets go inside!..");
+            setTimeout(showMessage, 4 * sec, mainCharacterSpeech, characterAudio, "OMG! There is a ruby here.");
 
             setTimeout(getItem, 4 * sec, "ruby", "ruby");
         } else {
-            showMessage(mainCharacterSpeech, characterAudio, "this is door one.<br> And it's locked dummy...");
+            showMessage(mainCharacterSpeech, characterAudio, "The door is closed,<br> I need a key to open it...");
         }
 
-        break;
-    case "door2":
-        //something insert here
-        showMessage(mainCharacterSpeech, characterAudio, "noboby is home...<br> Come back later..");
-        break;
-    case "tree":
-        //something insert here
-        showMessage(mainCharacterSpeech, characterAudio, "Nice tree... looking good.. You come here often? nudge nudge...");
         break;
     case "signToLeft":
         //something insert here
@@ -66,14 +58,15 @@ switch (e.target.id) {
         break;
     case "statue":
         counterPortrait.style.opacity = 1;
-        showMessage(mainCharacterSpeech, characterAudio, "What is this for statue?");
-        setTimeout(showMessage, 4 * sec, counterSpeech, counterAudio, "Finaly someone to talk to");
+        showMessage(mainCharacterSpeech, characterAudio, "Wow, lok at this statue!");
+        setTimeout(showMessage, 4 * sec, counterSpeech, counterAudio, "Oh hello! Finaly someone to talk to :)");
         setTimeout(showMessage, 8 * sec, mainCharacterSpeech, characterAudio, "What do you mean? Statues are not supose to talk anyway..");
-        setTimeout(showMessage, 12 * sec, counterSpeech, counterAudio, "You should check one off the graves");
+        setTimeout(showMessage, 12 * sec, counterSpeech, counterAudio, "You should go down to the bunker");
         setTimeout(function () { counterPortrait.style.opacity = 0; }, 16 * sec);
-        setTimeout(showMessage, 16 * sec, mainCharacterSpeech, characterAudio, "Wait! What?");
+        setTimeout(showMessage, 16 * sec, mainCharacterSpeech, characterAudio, "Wait! Why?");
+        setTimeout(showMessage, 16 * sec, mainCharacterSpeech, characterAudio, "That's wierd, but maybe I sould go to the bunker?");
         break;
-    case "grave":
+    case "crate":
         if (!checkItem("rusty key")) {
             getItem("rusty key", "rustyKey");
             showMessage(mainCharacterSpeech, characterAudio, "Wow I found a rusty key!<br>Must been lying here for ages..");
